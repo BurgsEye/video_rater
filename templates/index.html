@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Video Player</title>
+  <style>
+
+  </style>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('serve_static', path='styles.css') }}">
+</head>
+
+<body>
+  <!-- Add a div to display the counter value -->
+  <div id="message"></div>
+  {% if message %}
+  <p>{{ message }}</p>
+  <form id="my-form" method="POST" action="{{ url_for('purge_videos') }}">
+    <button type="submit">Purge</button>
+  </form>
+  {% else %}
+  <h1>Video Player</h1>
+  <form id="rating-form" action="{{ url_for('move_video') }}" method="post">
+    <input type="hidden" id="current_video" name="current_video" value="{{ url_for('serve_videos', path=next_video) }}">
+    <button type="submit" name="rating" value="A">A</button>
+    <button type="submit" name="rating" value="B">B</button>
+    <button type="submit" name="rating" value="C">C</button>
+    <button type="submit" name="rating" value="D">D</button>
+    <button type="submit" name="rating" value="S">S</button>
+  </form>
+  <br>
+  <button onclick="skipForward(10)">+ 10 Seconds</button>
+  <button onclick="skipForward(30)">+ 30 Seconds</button>
+  <button onclick="skipForward(60)">+ 1 Minute</button>
+  <br>
+  <!-- Add a button to purge videos -->
+
+
+  <video id="videoPlayer" controls autoplay>
+    {% if next_video %}
+    <source src="{{ url_for('serve_videos', path=next_video) }}" type="video/mp4">
+    {% endif %}
+  </video>
+  <br>
+  <button type="button" onclick="purgeVideos()">Purge Videos</button>
+  <h2>Video List</h2>
+  <h3>{{no_videos}} video(s) remaining</h3>
+  <!-- <ul>
+    {% for video in videos %}
+    <li>{{ video }}</li>
+    {% endfor %}
+  </ul> -->
+  {% endif %}
+
+
+
+  <script src="{{ url_for('serve_static', path='script.js') }}"></script>
+
+</body>
+
+</html>

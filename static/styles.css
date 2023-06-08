@@ -1,0 +1,105 @@
+#messageBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+
+
+  #videoPlayer {
+    min-width: 50%;
+    height: auto;
+  }
+
+
+
+  /* Set the font family and background color for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  /* Style the video player */
+  #videoPlayer {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the video list */
+  h2 {
+    margin-top: 40px;
+  }
+  
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  li:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style the rating buttons */
+  #rating-form button {
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #rating-form button:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Style the skip buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Style the purge button */
+  #my-form button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #my-form button:hover {
+    background-color: #d32f2f;
+  }
+  
